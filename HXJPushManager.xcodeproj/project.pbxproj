@@ -15,6 +15,7 @@
 		02498883223CD53A006F5F13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 02498882223CD53A006F5F13 /* main.m */; };
 		0249888D223CD53B006F5F13 /* HXJPushManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0249888C223CD53B006F5F13 /* HXJPushManagerTests.m */; };
 		02498898223CD53B006F5F13 /* HXJPushManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02498897223CD53B006F5F13 /* HXJPushManagerUITests.m */; };
+		A7814A119316E0D256E65F35 /* libPods-HXJPushManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EF723C12781DDC066BDD81 /* libPods-HXJPushManager.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,9 @@
 		02498893223CD53B006F5F13 /* HXJPushManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HXJPushManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02498897223CD53B006F5F13 /* HXJPushManagerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HXJPushManagerUITests.m; sourceTree = "<group>"; };
 		02498899223CD53B006F5F13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EBCAE179AD76B0A38897A48 /* Pods-HXJPushManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HXJPushManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-HXJPushManager/Pods-HXJPushManager.release.xcconfig"; sourceTree = "<group>"; };
+		71232227FA07900C42ED26B4 /* Pods-HXJPushManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HXJPushManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HXJPushManager/Pods-HXJPushManager.debug.xcconfig"; sourceTree = "<group>"; };
+		E6EF723C12781DDC066BDD81 /* libPods-HXJPushManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HXJPushManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7814A119316E0D256E65F35 /* libPods-HXJPushManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,8 @@
 				0249888B223CD53B006F5F13 /* HXJPushManagerTests */,
 				02498896223CD53B006F5F13 /* HXJPushManagerUITests */,
 				02498871223CD539006F5F13 /* Products */,
+				C390A442B165B3870AB9E4AB /* Pods */,
+				3C50DEAD4397FB20993CE06B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +139,23 @@
 			path = HXJPushManagerUITests;
 			sourceTree = "<group>";
 		};
+		3C50DEAD4397FB20993CE06B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6EF723C12781DDC066BDD81 /* libPods-HXJPushManager.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C390A442B165B3870AB9E4AB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				71232227FA07900C42ED26B4 /* Pods-HXJPushManager.debug.xcconfig */,
+				0EBCAE179AD76B0A38897A48 /* Pods-HXJPushManager.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,6 +163,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0249889C223CD53B006F5F13 /* Build configuration list for PBXNativeTarget "HXJPushManager" */;
 			buildPhases = (
+				30FD979E933CF56781544296 /* [CP] Check Pods Manifest.lock */,
 				0249886C223CD539006F5F13 /* Sources */,
 				0249886D223CD539006F5F13 /* Frameworks */,
 				0249886E223CD539006F5F13 /* Resources */,
@@ -256,6 +281,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		30FD979E933CF56781544296 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HXJPushManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0249886C223CD539006F5F13 /* Sources */ = {
@@ -433,10 +479,13 @@
 		};
 		0249889D223CD53B006F5F13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71232227FA07900C42ED26B4 /* Pods-HXJPushManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8LQ47K46NT;
 				INFOPLIST_FILE = HXJPushManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,10 +498,13 @@
 		};
 		0249889E223CD53B006F5F13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EBCAE179AD76B0A38897A48 /* Pods-HXJPushManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8LQ47K46NT;
 				INFOPLIST_FILE = HXJPushManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
